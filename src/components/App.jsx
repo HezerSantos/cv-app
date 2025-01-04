@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import '../assets/styles/resume.css'
 
 
-function InputElement({labelName, type = "text", uid = null, rContainer, id}) {
+function InputElement({labelName, type = "text", uid, rContainer, id}) {
   const [value, setValue] = useState("");
   const handleEvents = (event) => {
     setValue(event.target.value)
@@ -11,17 +11,16 @@ function InputElement({labelName, type = "text", uid = null, rContainer, id}) {
   }
   return(
     <div className='label-container'>
-      <label htmlFor={uid ? uid : labelName}>{labelName}</label>
+      <label htmlFor={uid}>{labelName}</label>
       <input 
         type={type} 
         className='input-fields' 
-        id = {uid ? uid : labelName}
+        id = {uid}
         value={value}
         onChange={handleEvents}
         autoComplete="off"
       />
     </div>
-
   )
 }
 
