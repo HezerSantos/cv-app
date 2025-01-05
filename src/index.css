@@ -17,6 +17,12 @@ body{
   background-color: rgb(231, 231, 231);
 }
 
+body div{
+  display: flex;
+  gap: 1rem;
+}
+
+
 .information-form, .resume-container{
   background-color: white;
   box-shadow: 5px 5px 10px gray;
@@ -31,15 +37,16 @@ body{
 .information-form{
   padding: clamp(1rem, 5vh, 5rem);
   min-width: clamp(25rem, 50vw, 50rem);
-  max-height: 35rem;
+  max-height: 50rem;
 }
 
 .resume-container{
   padding: 3rem;
   min-width: clamp(30rem, 50vw, 35rem);
-  height: 50em;
-  gap: 1rem;
+  max-height: 50rem;
+  gap: .5rem;
   overflow: hidden;
+  background-color: rgb(250, 248, 242);  
 }
 
 .resume-container > * {
@@ -56,7 +63,10 @@ body{
 
 .resume-info{
   margin-left: auto;
-  
+}
+
+.general-container > *, .resume-info > * > *{
+  font-family: 'Times New Roman', Times, serif;
 }
 
 h2{
@@ -66,9 +76,16 @@ h2{
 .education-container, .work-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
   border-bottom: 1px solid black;
-  padding: 1rem;
+  padding: .325rem;
+}
+
+.education-container > *, .work-container > *{
+  font-size: .8rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+.work-container > * > *, .education-container > * > *{
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .education-container h1{
@@ -76,10 +93,12 @@ h2{
 }
 .dateInfo{
   justify-self: end;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .section-headers{
-  font-size: 1.25rem;
+  font-size: .8rem;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .information-form > *{
@@ -130,5 +149,11 @@ button{
 
 button:hover{
   box-shadow: 5px 5px 10px grey;
+}
+
+@media (max-width: 1200px){
+  body div{
+    flex-direction: column;
+  }
 }
 

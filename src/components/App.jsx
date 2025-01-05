@@ -157,7 +157,7 @@ function EducationContainer({className = "", institutionName = "", major = "", d
         <h2>{institutionName}:</h2>
       </div> 
       <div className='dateInfo'>
-        <h3>{dateEnter} to {dateLeave}</h3>
+        <h2>{dateEnter} to {dateLeave}</h2>
       </div> 
       <h2>Title of Study: {major}</h2>
     </section>
@@ -167,7 +167,7 @@ function EducationContainer({className = "", institutionName = "", major = "", d
 function WorkContainer({className = "", institutionName = "", description = "", dateEnter = "", dateLeave = ""}){
   return(
     <section className={className}>
-      <div><h1>{institutionName}:</h1></div> <div className='dateInfo'><h3>{dateEnter} to {dateLeave}</h3></div> 
+      <div><h2>{institutionName}:</h2></div> <div className='dateInfo'><h2>{dateEnter} to {dateLeave}</h2></div> 
       <h2>Description: {description}</h2>
     </section>
   )
@@ -207,7 +207,6 @@ function App() {
   // }, [generalContainer]);
   return (
     <>
-    {formHidden && (
       <form action="">
         <main className='information-form'>
             {[...generalContainer].map(([generalID]) => {
@@ -236,14 +235,14 @@ function App() {
               handleClick={() => AddResumeContainer({setWorkContainer})}
             />
           </main>
-          <Button 
+          {/* <Button 
             content='submit'
             handleClick={submitHandler}
-        />
+        /> */}
       </form>
-    )}
 
-    {!formHidden && (
+
+
       <>
       <main className='resume-container'>
         {generalContainer.size >= 1 && (
@@ -292,13 +291,13 @@ function App() {
           })
         )}
       </main>
-      <Button 
+      {/* <Button 
         content='Edit'
         handleClick={submitHandler}
-      />
+      /> */}
       </>
       
-    )}
+
     </>
   )
 }
